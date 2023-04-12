@@ -29,7 +29,7 @@ plugins {
 }
 
 gradleEnterprise {
-    server = "http://ge.solutions-team.gradle.com"
+    server = "https://e.grdev.net"
     allowUntrustedServer = true
     buildScan {
         publishAlways()
