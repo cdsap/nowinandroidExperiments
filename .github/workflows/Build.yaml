@@ -29,6 +29,7 @@ jobs:
            uses: cdsap/ge-experiment-report@v.1.1
            with:
              task: "assembleDebug"
+             max-builds: 999
              experiment-id: ${{github.run_number}}
              tags: "${{ github.head_ref }}, gp_kg_2"
              project: "nowinandroid"
