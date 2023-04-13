@@ -7,7 +7,7 @@ jobs:
     runners:
       strategy:
         matrix:
-          version: ["${{ github.head_ref }}","gp_kg_3"]
+          version: ["${{ github.head_ref }}","gp_kg_2"]
       runs-on: "ubuntu-latest"
       steps:
          - uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
            with:
              task: "assembleDebug"
              experiment-id: ${{github.run_number}}
-             tags: "${{ github.head_ref }}, gp_kg_3"
+             tags: "${{ github.head_ref }}, gp_kg_2"
              project: "nowinandroid"
              api-key: ${{ secrets.GE_API_KEY }}
              url: ${{ secrets.GE_URL }}
