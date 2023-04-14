@@ -1,13 +1,13 @@
 on:
   pull_request:
   push:
-      branches: gp_kg
+      branches: gp_kp
 
 jobs:
     runners:
       strategy:
         matrix:
-          version: ["${{ github.head_ref }}","gp_kg_2"]
+          version: ["${{ github.head_ref }}","gp_kp_2"]
       runs-on: "ubuntu-latest"
       steps:
          - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
              task: "assembleDebug"
              max-builds: 999
              experiment-id: ${{github.run_number}}
-             tags: "${{ github.head_ref }}, gp_kg_2"
+             tags: "${{ github.head_ref }}, gp_kp_2"
              project: "nowinandroid"
              api-key: ${{ secrets.GE_API_KEY }}
              url: ${{ secrets.GE_URL }}
