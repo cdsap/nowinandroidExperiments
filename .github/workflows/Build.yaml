@@ -14,7 +14,7 @@ jobs:
          - id: foo
            uses: cdsap/ge-experiment-runner@v1.0.1
            with:
-             task: "assembleDebug"
+             task: "assembleRelease"
              iterations: 5
              experiment-id: ${{github.run_number}}
              variant: ${{ matrix.version }}
@@ -28,7 +28,7 @@ jobs:
          - id: fooa
            uses: cdsap/ge-experiment-report@v.1.1
            with:
-             task: "assembleDebug"
+             task: "assembleRelease"
              max-builds: 999
              experiment-id: ${{github.run_number}}
              tags: "${{ github.head_ref }}, gg_kg_release"
