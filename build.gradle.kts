@@ -37,11 +37,13 @@ plugins {
     alias(libs.plugins.secrets) apply false
 }
 //
-//allprojects {
-//    tasks.withType<com.android.build.gradle.internal.tasks.PerModuleReportDependenciesTask>()
-//        .configureEach {
-//            doLast {
-//                rootProject.buildScan.value("${this@configureEach.path}", "${this@configureEach.getRootComponent().get().toString()}")
-//            }
-//        }
-//}
+allprojects {
+    tasks.withType<com.android.build.gradle.internal.tasks.PerModuleReportDependenciesTask>()
+        .configureEach {
+            val task = path
+            val co = getRootComponent()
+            doLast {
+                rootProject.buildScan.value("${task}", "${co.get().toString()}")
+            }
+        }
+}
