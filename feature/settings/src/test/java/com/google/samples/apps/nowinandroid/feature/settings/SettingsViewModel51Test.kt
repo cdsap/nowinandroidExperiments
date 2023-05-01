@@ -31,7 +31,7 @@ import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SettingsViewModelTest {
+class SettingsViewModel51Test {
 
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()

@@ -94,6 +94,7 @@ class TopicViewModelTest {
 
     @Test
     fun uiStateNews_whenInitialized_thenShowLoading() = runTest {
+        Thread.sleep(5000)
         assertEquals(NewsUiState.Loading, viewModel.newUiState.value)
     }
 

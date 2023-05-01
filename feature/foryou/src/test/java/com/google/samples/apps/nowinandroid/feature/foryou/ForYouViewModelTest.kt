@@ -199,6 +199,7 @@ class ForYouViewModelTest {
 
     @Test
     fun onboardingIsShownAfterLoadingEmptyFollowedTopics() = runTest {
+        Thread.sleep(5000)
         val collectJob1 =
             launch(UnconfinedTestDispatcher()) { viewModel.onboardingUiState.collect() }
         val collectJob2 = launch(UnconfinedTestDispatcher()) { viewModel.feedState.collect() }

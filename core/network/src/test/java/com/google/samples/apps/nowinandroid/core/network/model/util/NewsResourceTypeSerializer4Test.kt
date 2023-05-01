@@ -21,7 +21,7 @@ import kotlinx.serialization.json.Json
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class NewsResourceTypeSerializerTest {
+class NewsResourceTypeSerializer4Test {
 
     @Test
     fun test_news_resource_serializer_video() {

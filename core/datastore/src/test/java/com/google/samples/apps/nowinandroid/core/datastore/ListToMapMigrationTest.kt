@@ -55,6 +55,7 @@ class ListToMapMigrationTest {
         val preMigrationUserPreferences = userPreferences {
             deprecatedFollowedAuthorIds.addAll(listOf("4", "5", "6"))
         }
+        Thread.sleep(5000)
         // Assert that there are no author ids in the map yet
         assertEquals(
             emptyMap<String, Boolean>(),

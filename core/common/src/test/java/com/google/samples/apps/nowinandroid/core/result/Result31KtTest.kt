@@ -22,7 +22,7 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class ResultKtTest {
+class Result31KtTest {
 
     @Test
     fun Result_catches_errors() = runTest {

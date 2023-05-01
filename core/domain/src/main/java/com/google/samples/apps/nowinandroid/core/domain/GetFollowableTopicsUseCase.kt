@@ -55,6 +55,10 @@ class GetFollowableTopicsUseCase @Inject constructor(
             }
         }
     }
+
+    fun ass(){
+        println("as")
+    }
 }
 
 enum class TopicSortField {

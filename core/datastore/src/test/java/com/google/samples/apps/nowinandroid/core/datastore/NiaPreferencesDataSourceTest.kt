@@ -46,6 +46,7 @@ class NiaPreferencesDataSourceTest {
 
     @Test
     fun shouldHideOnboardingIsFalseByDefault() = testScope.runTest {
+        Thread.sleep(5000)
         assertFalse(subject.userData.first().shouldHideOnboarding)
     }
 

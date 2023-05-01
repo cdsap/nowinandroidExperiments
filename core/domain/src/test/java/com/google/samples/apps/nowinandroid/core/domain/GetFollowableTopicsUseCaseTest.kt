@@ -45,7 +45,7 @@ class GetFollowableTopicsUseCaseTest {
     fun whenNoParams_followableTopicsAreReturnedWithNoSorting() = runTest {
         // Obtain a stream of followable topics.
         val followableTopics = useCase()
-
+        Thread.sleep(5000)
         // Send some test topics and their followed state.
         topicsRepository.sendTopics(testTopics)
         userDataRepository.setFollowedTopicIds(setOf(testTopics[0].id, testTopics[2].id))
