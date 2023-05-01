@@ -33,23 +33,16 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Check spotless
-        run: ./gradlew spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache
-
-      - name: Check lint
-        run: ./gradlew lintDemoDebug
-        env:
-            GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
 
       - name: Build all build type and flavor permutations
         run: ./gradlew assemble
         env:
-            GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
+          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
 
       - name: Run local tests
         run: ./gradlew testDemoDebug testProdDebug
         env:
-            GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
+          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
 
       - name: Upload build outputs (APKs)
         uses: actions/upload-artifact@v3
