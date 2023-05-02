@@ -18,9 +18,12 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-
+        mavenLocal()
         // Android Build Server
         maven { url = uri("../nowinandroid-prebuilts/m2repository") }
+    }
+    dependencies {
+        //    classpath("io.github.cdsap:talaiot:2.0.0-SNAPSHOT")
     }
 }
 
@@ -35,6 +38,9 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.secrets) apply false
+    id("io.github.cdsap.testprocess") version "0.1.2"
+    id("org.gradle.android.cache-fix") version "2.3.1" apply false
+
 }
 //
 allprojects {
@@ -46,4 +52,26 @@ allprojects {
                 rootProject.buildScan.value("${task}", "${co.get().toString()}")
             }
         }
+}
+
+//configure<Talaio
+//talaiot {
+//    publishers {
+//        jsonPublisher = true
+//  //      outputPublisher = true
+//    }
+//
+//}
+allprojects {
+    tasks.withType<Test>().configureEach {
+      //  maxParallelForks = 8
+      //  maxHeapSize = "1m"
+
+    }
+}
+
+subprojects {
+    plugins.withType<com.android.build.gradle.api.AndroidBasePlugin>() {
+        apply(plugin = "org.gradle.android.cache-fix")
+    }
 }

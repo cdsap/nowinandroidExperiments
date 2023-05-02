@@ -229,6 +229,7 @@ class NavigationTest {
      */
     @Test(expected = NoActivityResumedException::class)
     fun homeDestination_back_quitsApp() {
+        Thread.sleep(5000)
         composeTestRule.apply {
             // GIVEN the user navigates to the Interests destination
             onNodeWithText(interests).performClick()
